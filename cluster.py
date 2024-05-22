@@ -129,22 +129,7 @@ def entropy(input):
     return entropy
 
 
-def balance(predicted, size_0, k=10):
-    count = torch.zeros((k, 2))
-    for i in range(size_0):
-        count[predicted[i], 0] += 1
-    for i in range(size_0, predicted.shape[0]):
-        count[predicted[i], 1] += 1
 
-    count[count == 0] = 1e-5
-
-    balance_0 = torch.min(count[:, 0] / count[:, 1])
-    balance_1 = torch.min(count[:, 1] / count[:, 0])
-
-    en_0 = entropy(count[:, 0] / torch.sum(count[:, 0]))
-    en_1 = entropy(count[:, 1] / torch.sum(count[:, 1]))
-
-    return min(balance_0, balance_1).numpy(), en_0.numpy(), en_1.numpy()
 def clustering(embeddings, y, num_class,i):
     kmeans_input = embeddings.detach().cpu().numpy()
     kmeans = KMeans(n_clusters=num_class,n_init='auto', random_state=i).fit(kmeans_input)
@@ -155,8 +140,7 @@ def clustering(embeddings, y, num_class,i):
     #hm = homogeneity_score(labels, pred)
     #nmi = v_measure_score(labels, pred)
     nmi = normalized_mutual_info_score(labels, pred, average_method='arithmetic')
-    bal, en_0, en_1 = balance(pred, 700,num_class)
-    print(bal,en_0,en_1)
+  
 
     ari = adjusted_rand_score(labels, pred)
     #auccuary = accuracy_score(labels, pred)

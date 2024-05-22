@@ -33,7 +33,6 @@ def pretrain(dataset_name, model, graph, feat, optimizer, max_epoch, device, sch
     epoch_iter = tqdm(range(max_epoch))
 
    
-    A = graph.adjacency_matrix(transpose=True).to(device)
 
     mask_nodes = None
 
@@ -60,7 +59,7 @@ def pretrain(dataset_name, model, graph, feat, optimizer, max_epoch, device, sch
         num_mask_nodes = int(mask_rate * num_nodes)#
         mask_nodes = perm[: num_mask_nodes].to(device)
         keep_nodes = perm[num_mask_nodes: ].to(device)
-        enc_rep1,de_hidden, x_r1,loss1,loss_dict, decode_attn,encode_attn,edge_index,_= model(graph,x ,mask_nodes)
+        x_r1,loss1,loss_dict, encode_attn,edge_index= model(graph,x ,mask_nodes)
         
 
         encode_attn = torch.mean(encode_attn,dim=1).squeeze()
@@ -73,7 +72,7 @@ def pretrain(dataset_name, model, graph, feat, optimizer, max_epoch, device, sch
 
         h_edge,mask_edge,edge_w = drop_edge_weighted(edge_index,weights_hp,0.5,1.0)
 
-        maskadj,attA = gen_normalized_adjs(h_edge,num_nodes, edge_w)
+        maskadj,attA = gen_normalized_adjs(h_edge,num_nodes)
         hx,L= heterophily_highfilter_sp(maskadj,x,1,I)
       
         enc_rep,all_hidden,_= model.encoder(graph,x, return_hidden=True)
@@ -81,11 +80,11 @@ def pretrain(dataset_name, model, graph, feat, optimizer, max_epoch, device, sch
         high_x = model.mlp(enc_rep)
       
         diff =(high_x -x_r1)
-        high_loss = (sce_loss((diff)[mask_nodes],(hx)[mask_nodes],4).mean() )
+        high_loss = (sce_loss((diff)[keep_nodes],(hx)[keep_nodes],5).mean() )
 
         hetero_loss =  high_loss 
-        a1 = 0
-        a2 = 1
+        a1 = 0.2
+        a2 = 0.8
         loss = a1 * loss1 +a2 *hetero_loss#
 
         optimizer.zero_grad()
