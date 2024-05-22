@@ -41,7 +41,6 @@ class GAT(nn.Module):
         self.AE = nn.Linear(in_dim, out_dim*nhead_out)
         self.alpha = nn.Parameter(torch.Tensor(1, ))
         self.alpha.data = torch.tensor(0.5)
-        self.pairnorm = PairNorm()
         
         if num_layers == 1:
             self.gat_layers.append(GATConv(

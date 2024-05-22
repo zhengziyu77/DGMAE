@@ -70,7 +70,7 @@ def pretrain(dataset_name, model, graph, feat, optimizer, max_epoch, device, sch
 
         weights_hp = 1 - weights_lp
 
-        h_edge,mask_edge,edge_w = drop_edge_weighted(edge_index,weights_hp,0.5,1.0)
+        h_edge,mask_edge,edge_w = drop_edge_weighted(edge_index,weights_hp,0.5,0.7)
 
         maskadj,attA = gen_normalized_adjs(h_edge,num_nodes)
         hx,L= heterophily_highfilter_sp(maskadj,x,1,I)
@@ -83,8 +83,8 @@ def pretrain(dataset_name, model, graph, feat, optimizer, max_epoch, device, sch
         high_loss = (sce_loss((diff)[keep_nodes],(hx)[keep_nodes],5).mean() )
 
         hetero_loss =  high_loss 
-        a1 = 0.2
-        a2 = 0.8
+        a1 = 0.4
+        a2 = 0.6
         loss = a1 * loss1 +a2 *hetero_loss#
 
         optimizer.zero_grad()
