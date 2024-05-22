@@ -1,0 +1,169 @@
+IMDB-BINARY:
+  lr: 0.00015
+  lr_f: 0.005
+  num_hidden: 512
+  num_heads: 2
+  weight_decay: 1e-4
+  weight_decay_f: 0
+  max_epoch: 60
+  max_epoch_f: 500
+  mask_rate: 0.75
+  encoder: gin
+  decoder: gin
+  activation: prelu
+  in_drop: 0.2
+  loss_fn: sce
+  optimizer: adam
+  replace_rate: 0.1
+  drop_edge_rate: 0.0
+  alpha_l: 1
+  norm: batchnorm
+  scheduler: False
+  linear_prob: True
+  pooling: mean
+  batch_size: 32
+
+IMDB-MULTI:
+  lr: 0.00015
+  num_hidden: 512
+  num_heads: 2
+  weight_decay: 0
+  max_epoch: 50
+  mask_rate: 0.3
+  num_layers: 3
+  encoder: gin
+  decoder: gin
+  activation: prelu
+  in_drop: 0.2
+  loss_fn: sce
+  optimizer: adam
+  replace_rate: 0.0
+  drop_edge_rate: 0.0
+  alpha_l: 1
+  norm: batchnorm
+  scheduler: False
+  linear_prob: True
+  pooling: mean
+  batch_size: 32
+  alpha_l: 1
+PROTEINS:
+  lr: 0.00015
+  num_hidden: 512
+  weight_decay: 0
+  max_epoch: 100
+  mask_rate: 0.2
+  num_layers: 3
+  encoder: gin
+  decoder: gin
+  activation: prelu
+  in_drop: 0.2
+  loss_fn: sce
+  optimizer: adam
+  drop_edge_rate: 0.0
+  alpha_l: 3
+  norm: batchnorm
+  scheduler: True
+  linear_prob: True
+  pooling: max
+  batch_size: 32
+
+PROTEINS:
+  lr: 0.00015
+  num_hidden: 512
+  weight_decay: 0
+  max_epoch: 100
+  mask_rate: 0.5
+  num_layers: 3
+  encoder: gin
+  decoder: gin
+  activation: prelu
+  in_drop: 0.2
+  loss_fn: sce
+  optimizer: adam
+  drop_edge_rate: 0.0
+  alpha_l: 1
+  norm: batchnorm
+  scheduler: False
+  linear_prob: True
+  pooling: max
+  batch_size: 32
+  norm: batchnorm
+  alpha_l: 1  
+
+MUTAG:
+  num_hidden: 256
+  num_layers: 5
+  lr: 0.0005
+  weight_decay: 5e-4
+  mask_rate: 0.75
+  drop_edge_rate: 0.0
+  max_epoch: 40
+  encoder: gin
+  decoder: gin
+  activation: prelu
+  loss_fn: sce
+  scheduler: False
+  pooling: sum
+  batch_size: 64
+  alpha_l: 2 #alpha_d:4
+  replace_rate: 0.0
+  norm: batchnorm
+  in_drop: 0.2
+  attn_drop: 0.1
+
+
+
+REDDIT-BINARY:
+  lr: 0.00015
+  weight_decay: 0.0
+  max_epoch: 100
+  mask_rate: 0.75
+  drop_edge_rate: 0.0
+  num_hidden: 1024
+  num_layers: 2
+  encoder: gin
+  decoder: gin
+  activation: prelu
+  pooling: sum
+  scheduler: True
+  batch_size: 32
+  replace_rate: 0.1
+  norm: layernorm
+  loss_fn: sce
+  alpha_l: 2
+COLLAB:
+  lr: 0.00015
+  weight_decay: 0.0
+  max_epoch: 20
+  num_layers: 1
+  num_hidden: 256
+  mask_rate: 0.8
+  drop_edge_rate: 0.0
+  activation: relu
+  encoder: gin
+  decoder: gin
+  scheduler: True
+  pooling: max
+  batch_size: 32
+  loss_fn: sce
+  norm: batchnorm
+  alpha_l: 2
+NCI1:
+  lr: 0.001
+  max_epoch: 300
+  num_layers: 2
+  num_hidden: 512
+  mask_rate: 0.25 # not 0.75
+  drop_edge_rate: 0.0
+  activation: prelu
+  encoder: gin
+  decoder: gin
+  scheduler: True
+  pool: sum
+  batch_size: 16
+  alpha_l: 2
+  replace_rate: 0.1
+  norm: batchnorm
+  loss_fn: sce
+  alpha_l: 2
+

@@ -1,0 +1,413 @@
+cora:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 512
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4 #2e-4 #2e-4 #2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 2000
+  max_epoch_f: 300
+  mask_rate: 0.5 #0.1 0.5 0.002
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  hop: 1
+  scheduler: True
+
+citeseer:
+  lr: 0.00005
+  lr_f: 0.01
+  num_hidden: 1024
+  num_heads: 2
+  num_layers: 2
+  weight_decay: 5e-7 #2e-5 53-5
+  weight_decay_f: 0.01
+  max_epoch: 1000
+  max_epoch_f: 300
+  mask_rate: 0.5 
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2  
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.1
+  alpha_l: 3 # or 3 
+  hop: 1
+  scheduler: True
+  
+
+pubmed:
+  lr: 0.001 #0.001
+  lr_f: 0.01
+  num_hidden: 1024
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 1e-5 #1e-5
+  weight_decay_f: 1e-4
+  max_epoch: 2000
+  max_epoch_f: 300
+  mask_rate: 0.75
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.0
+  alpha_l: 3
+  scheduler: True
+  hop: 2
+
+texas:
+  lr: 0.0005 #0.0005 #0.0008
+  lr_f: 0.01
+  num_hidden: 512
+  num_heads: 4
+  num_layers: 1
+  weight_decay: 1e-3
+  weight_decay_f: 1e-4
+  max_epoch: 1000
+  max_epoch_f: 300
+  mask_rate: 0.75 
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  hop: 2
+  scheduler: True
+  residual: True
+
+ 
+cornell:
+  lr: 0.0005
+  lr_f: 0.01
+  num_hidden: 512
+  num_heads: 8
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1000
+  max_epoch_f: 300
+  mask_rate: 0.8 #0.1 0.5 0.002
+  num_layers: 1
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0
+  optimizer: adam
+  replace_rate: 0.1 #seed 42 0.05
+  alpha_l: 2
+  hop: 2
+  scheduler: True
+  residual: True
+
+Wis:
+  lr: 0.0005
+  lr_f: 0.01
+  num_hidden: 1024
+  num_heads: 8
+  weight_decay: 5e-4 #5e-4 #1e-3 #2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1000
+  max_epoch_f: 300
+  mask_rate: 0.75 #0.1 0.5 0.002  #聚类：0.1 200epoch
+  num_layers: 1
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  hop: 2
+  scheduler: True
+  residual: True
+chame:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 512
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 1e-4
+  weight_decay_f: 1e-4
+  max_epoch: 3000
+  max_epoch_f: 300
+  mask_rate: 0.75 #0.75 #0.1 0.5 0.002
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.0
+  alpha_l: 3
+  hop: 1
+  scheduler: True
+
+croco:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 1024 #2048
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-5
+  weight_decay_f: 1e-4
+  max_epoch: 3000
+  max_epoch_f: 300
+  mask_rate: 0.5 #0.1 0.5 0.002
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.00
+  alpha_l: 3
+  hop: 1
+  scheduler: True
+act:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 128
+  num_heads: 4
+  num_layers: 1
+  weight_decay: 2e-4 #5e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1000
+  max_epoch_f: 300
+  mask_rate: 0.75  #0.9
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.1
+  alpha_l: 4
+  scheduler: True
+  residual: True
+  hop: 1
+  norm: batchnorm
+squ:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 1024
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 3000
+  max_epoch_f: 300
+  mask_rate: 0.5
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.0
+  alpha_l: 3
+  hop: 1
+  scheduler: True
+ 
+
+roman:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 1024
+  num_heads: 8
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 3000
+  max_epoch_f: 300
+  mask_rate: 0.75 #0.1 0.5 0.002  #聚类：0.1
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  hop: 2
+  scheduler: True
+  norm: layernorm
+
+flicker:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 512
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1000
+  max_epoch_f: 300
+  mask_rate: 0.5 #0.1 0.5 0.002
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  hop: 2
+  #concat_hidden: True
+  scheduler: True
+
+
+phy:
+  lr: 0.0005 #0.001
+  lr_f: 0.01
+  num_hidden: 1024
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 5e-5 #2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1000 #1500
+  max_epoch_f: 300
+  mask_rate: 0.75
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0
+  optimizer: adam
+  replace_rate: 0.0
+  alpha_l: 3
+  scheduler: True
+
+cs:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 512
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 5e-5 
+  weight_decay_f: 1e-4
+  max_epoch: 1000
+  max_epoch_f: 300
+  mask_rate: 0.7 
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  scheduler: True
+
+
+computer:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 1024
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1000 
+  max_epoch_f: 300
+  mask_rate: 0.5 #0.1 0.5 0.002
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  scheduler: True
+  #sava_model: True
+  #load_model: True
+photo:
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 512
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1500
+  max_epoch_f: 300
+  mask_rate: 0.5 
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce
+  drop_edge_rate: 0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  scheduler: True

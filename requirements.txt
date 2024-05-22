@@ -1,0 +1,81 @@
+appdirs==1.4.4
+astor==0.8.1
+brotlipy==0.7.0
+certifi @ file:///croot/certifi_1690232220950/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+cloudpickle==3.0.0
+colorama==0.4.6
+contextlib2==21.6.0
+contourpy==1.1.1
+cryptography @ file:///croot/cryptography_1689373676338/work
+cycler==0.11.0
+DaPy==1.16.1
+dgl==1.0.0+cu116
+dill==0.3.7
+filelock==3.11.0
+fonttools==4.42.1
+idna @ file:///croot/idna_1666125576474/work
+importlib-metadata==6.8.0
+importlib-resources==6.1.0
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib @ file:///croot/joblib_1685113087166/work
+json-tricks==3.17.3
+kiwisolver==1.4.5
+littleutils==0.2.2
+llvmlite==0.41.0
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+matplotlib==3.7.3
+mkl-fft==1.3.6
+mkl-random @ file:///work/mkl/mkl_random_1682950433854/work
+mkl-service==2.4.0
+multiprocess==0.70.15
+munkres==1.1.4
+networkx @ file:///croot/networkx_1690561992265/work
+nni==3.0
+numba==0.58.0
+numpy @ file:///work/mkl/numpy_and_numpy_base_1682953417311/work
+nvidia-ml-py==12.535.133
+ogb==1.3.6
+outdated==0.2.2
+packaging @ file:///croot/packaging_1693575174725/work
+pandas==2.0.3
+Pillow==9.4.0
+pooch @ file:///tmp/build/80754af9/pooch_1623324770023/work
+prettytable==3.9.0
+psutil @ file:///opt/conda/conda-bld/psutil_1656431268089/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyOpenSSL @ file:///croot/pyopenssl_1690223430423/work
+pyparsing @ file:///opt/conda/conda-bld/pyparsing_1661452539315/work
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
+python-dateutil==2.8.2
+PythonWebHDFS==0.2.3
+pytz==2023.3.post1
+PyYAML==6.0.1
+requests @ file:///croot/requests_1690400202158/work
+responses==0.24.1
+schema==0.7.5
+scikit-learn @ file:///croot/scikit-learn_1690978916802/work
+scipy==1.10.1
+seaborn==0.13.0
+simplejson==3.19.2
+six==1.16.0
+threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+torch==1.13.0
+torch-cluster @ file:///home/zhengziyu/zzy/torch_cluster-1.6.1%2Bpt113cu116-cp38-cp38-linux_x86_64.whl#sha256=710d0b7c8cfca0af7dd9b7bd71afe4ea9c795804d4c321d6e188e4cb11817ad9
+torch-geometric @ file:///usr/share/miniconda/envs/test/conda-bld/pyg_1690989829518/work
+torch-scatter @ file:///home/zhengziyu/zzy/torch_scatter-2.1.1%2Bpt113cu116-cp38-cp38-linux_x86_64.whl#sha256=7040f55aad8f2d38d8be83e0f7369045db8bf9f26e3a233cb80545268985c992
+torch-sparse @ file:///home/zhengziyu/zzy/torch_sparse-0.6.17%2Bpt113cu116-cp38-cp38-linux_x86_64.whl#sha256=40c3f97183f46b90576965e9763e61b9a3fe3132785d99036d5dc3e1b7aff5aa
+torch-spline-conv @ file:///home/zhengziyu/zzy/torch_spline_conv-1.2.2%2Bpt113cu116-cp38-cp38-linux_x86_64.whl#sha256=00613952c56bd505c85e0a6d2404c4beae38b1e82a6973eda62ff6d56c6e1da1
+torchaudio==0.13.0
+torchvision==0.14.0
+tqdm @ file:///croot/tqdm_1679561862951/work
+typeguard==4.1.2
+typing_extensions @ file:///croot/typing_extensions_1690297465030/work
+tzdata==2023.3
+urllib3 @ file:///croot/urllib3_1686163155763/work
+wcwidth==0.2.12
+websockets==12.0
+xlrd==2.0.1
+xlwt==1.3.0
+zipp==3.17.0
