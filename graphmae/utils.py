@@ -407,4 +407,4 @@ def drop_edge_weighted(edge_index, edge_weights, p: float, threshold: float = 1.
     edge_weights = edge_weights.where(edge_weights < threshold, torch.ones_like(edge_weights) * threshold)
     sel_mask = torch.bernoulli(1-edge_weights).to(torch.bool)
 
-    return edge_index[:, (~sel_mask)],edge_index[:, (sel_mask)],edge_weights[~sel_mask]
+    return edge_index[:, (sel_mask)],edge_index[:, (~sel_mask)],edge_weights[sel_mask]
